@@ -17,6 +17,10 @@ export function authenticateUser(
   };
 }
 
+export function userNameLowerCase(username: string): string {
+  return username.toLowerCase();
+}
+
 export class UserNameToLowercase {
   public toLower(username: string): string {
     if (username.trim() === "") {

@@ -1,6 +1,7 @@
 import {
   authenticateUser,
   product,
+  userNameLowerCase,
   UserNameToLowercase,
 } from "../app/BasicUtils";
 
@@ -18,6 +19,34 @@ describe("BasicUtils test suite", () => {
     expect(actual).toBeLessThan(10);
     expect(actual).toBeGreaterThan(4);
   });
+
+  // parameterized test
+  it.each([
+    // 2*3=6
+    [2, 3, 6],
+    // 0*7=0 ...
+    [0, 7, 0],
+    [10, 10, 100],
+    [2, 2, 4],
+  ])(
+    "parameterized test!!! should return the product of %i and %i as %i",
+    (a, b, expected) => {
+      const actual = product(a, b);
+      expect(actual).toEqual(expected);
+    }
+  );
+
+  it.each([
+    { input: "AugustiNE", expected: "augustine" },
+    { input: "beauTY", expected: "beauty" },
+    { input: "BOB", expected: "bob" },
+  ])(
+    "$input to lowercase shoud be $expected from parameterized testing.",
+    ({ input, expected }) => {
+      const actual = userNameLowerCase(input);
+      expect(actual).toBe(expected);
+    }
+  );
 
   // Nested describe
   describe("Authentication test suite", () => {
@@ -125,5 +154,11 @@ describe("BasicUtils test suite", () => {
 
       expect(handleError).toThrow();
     });
+
+    it.todo("Test to do later");
   });
+
+  // describe.only - runs only this particular block
+  // describe.skip - skips this block
+  // it.todo - marks a test to do later
 });
