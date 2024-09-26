@@ -4,7 +4,8 @@
   "description": "Unit testing with Jest in Typescript",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test-watch": "jest --watch"
   },
   "author": "Leonardo José Nunes",
   "license": "MIT",

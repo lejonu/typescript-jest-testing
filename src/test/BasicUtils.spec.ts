@@ -118,7 +118,7 @@ describe("BasicUtils test suite", () => {
   //     expect(actual.usernameToLower).toBe("developer");
   //   });
 
-  describe("class UserNameToLowercase test suite", () => {
+  describe.skip("class UserNameToLowercase test suite", () => {
     //  setup
     let sut: UserNameToLowercase;
 

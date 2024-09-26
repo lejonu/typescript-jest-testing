@@ -126,3 +126,30 @@ package.json
 ![](img/ThreeAAA-Structure.png)
 
 ![](img/First-U_Principle.png)
+
+## Test Coverage
+
+jest.config.ts
+```json
+import type { Config } from "@jest/types";
+
+const config: Config.InitialOptions = {
+  preset: "ts-jest",
+  testEnvironment: "node",
+  verbose: true,
+  collectCoverage: true,
+  collectCoverageFrom: ["<rootDir>/src/app/**/*.ts"],
+};
+
+export default config;
+```
+
+.gitignore
+```txt
+/node_modules
+/coverage
+```
+
+```bash
+firefox "./coverage/lcov-report/index.html"
+```
