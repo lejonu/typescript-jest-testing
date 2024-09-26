@@ -1,4 +1,8 @@
-import { authenticateUser, product } from "../app/BasicUtils";
+import {
+  authenticateUser,
+  product,
+  UserNameToLowercase,
+} from "../app/BasicUtils";
 
 describe("BasicUtils test suite", () => {
   it("returns the product of 3 an 2", () => {
@@ -84,4 +88,42 @@ describe("BasicUtils test suite", () => {
   //     const actual = sut("deveLOPER", "dev");
   //     expect(actual.usernameToLower).toBe("developer");
   //   });
+
+  describe("class UserNameToLowercase test suite", () => {
+    //  setup
+    let sut: UserNameToLowercase;
+
+    // runs before each block of test
+    beforeEach(() => {
+      console.log("setup from here");
+      sut = new UserNameToLowercase();
+    });
+
+    // runs after each block of test
+    // afterEach(() => {
+    //   console.log("teardown from here");
+    // });
+
+    it("returns the lower case of a valid username", () => {
+      const actual = sut.toLower("Bob");
+      console.log("I am the main test");
+      expect(actual).toBe("bob");
+    });
+
+    it("throws an error for an invalid username", () => {
+      // must be wrapped within a function
+      expect(() => sut.toLower("")).toThrow();
+      expect(() => sut.toLower("")).toThrowErrorMatchingSnapshot(
+        "Invalid username!"
+      );
+    });
+
+    it("throws an error for an invalid username in a function", () => {
+      function handleError() {
+        const actual = sut.toLower("");
+      }
+
+      expect(handleError).toThrow();
+    });
+  });
 });

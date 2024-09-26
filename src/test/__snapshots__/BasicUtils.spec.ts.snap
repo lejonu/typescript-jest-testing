@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BasicUtils test suite class UserNameToLowercase test suite throws an error for an invalid username: Invalid username! 1`] = `"Invalid username!"`;
