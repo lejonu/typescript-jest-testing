@@ -63,7 +63,7 @@ module.exports = {
 };
 ````
 
-Delete autocofig and create mannualy 
+Delete autoconfig and create mannualy 
 
 jest.config.ts
 
@@ -121,3 +121,6 @@ package.json
 }
 
 ```
+
+# Test Structure
+![](img/ThreeAAA-Structure.png)
