@@ -63,7 +63,7 @@ module.exports = {
 };
 ````
 
-Delete autocofig and create mannyaly 
+Delete autocofig and create mannualy 
 
 jest.config.ts
 
@@ -77,4 +77,47 @@ const config: Config.InitialOptions = {
 };
 
 export default config;
+```
+
+## Add ts-node
+```bash
+npm i -D ts-node
+```
+
+## Create ts config
+
+```bash
+npm install -g typescript
+tsc --init
+```
+tsconfig.json
+```json
+{
+  "compilerOptions": {
+   "esModuleInterop": true,                             
+  }
+}
+```
+
+package.json
+```json
+{
+  "name": "unit-testing",
+  "version": "1.0.0",
+  "description": "Unit testing with Jest in Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Leonardo José Nunes",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.13",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}
+
 ```
